@@ -69,7 +69,7 @@ class Player:
         if len(captured_pieces) > 0:
             print(f"Captures {self.name}: {captured_pieces}")
         else:
-            print(f"Captures {self.name}:")
+            print(f"Captures {self.name}: ")
 
     def piece_in_promote_row(self, loc):
         """
