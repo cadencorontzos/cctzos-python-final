@@ -1,0 +1,2 @@
+BOARD_SIZE = 5
+MOVE_LIMIT = 400 #200 each

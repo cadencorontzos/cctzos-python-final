@@ -1,29 +1,17 @@
 import sys
-from utils import parseTestCase
-
+from game_modes.filegame import FileGame
+from game_modes.interactivegame import InteractiveGame
 def main():
     """
     Main function to read terminal input
     """
     if sys.argv[1] == '-f':
-        input = parseTestCase(sys.argv[2])
-        # Prints example output
-        print(
-"""UPPER player action: drop s d1
-5 |__|__| R|__| D|
-4 |__|__|__|__|__|
-3 |__|__|__|__|__|
-2 |__|__|__|__|__|
-1 | d| g|__| n|__|
-    a  b  c  d  e
-
-Captures UPPER: S R P
-Captures lower: p n g s
-
-lower player wins.  Illegal move.""")
+        file_mode = FileGame()
+        file_mode.run_game_file_mode(sys.argv[2])
 
     if sys.argv[1] == '-i':
-        pass
+        interactive_mode = InteractiveGame()
+        interactive_mode.start_interactive_game()
 
 if __name__ == "__main__":
     main()
